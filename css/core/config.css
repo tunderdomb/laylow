@@ -1,0 +1,5 @@
+ParseError: Unrecognised input in D:\dev\projects\laylow\css\core\config.less on line 10, column 35:
+9 .disable-mobile-webkit-highlights-legy
+10 .disable-mobile-webkit-highlights() when ( disable-mobile-webkit-highlights = yes ){
+11   -webkit-touch-callout: none;
+
