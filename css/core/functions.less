@@ -1,0 +1,209 @@
+@import "variables";
+
+//* =========================== LAYOUT =========================== */
+.inline(){
+  display: inline-block;
+  margin-right: -4px;
+}
+.inline( @text-align: left ){
+  display: inline-block;
+  margin-right: -4px;
+  text-align: @text-align;
+}
+
+.min-height( @height ){
+  min-height: @height;
+  height: auto !important;
+  height: @height;
+}
+.page-break(){
+  page-break-before: always;
+}
+
+
+//* =========================== DISPLAY =========================== */
+
+// ========== visibility  ==========
+.opacity( @o: .7 ) when ( @legacy-support = no ){
+  @mso: (@o * 100);
+  filter: ~"alpha(opacity=@{mso})";
+  opacity: @o;
+}
+.opacity( @o: .7 ) when ( @legacy-support = yes ){
+  @mso: (@o * 100);
+  filter: ~"alpha(opacity=@{mso})"; // internet explorer
+  -khtml-opacity: @o;      // khtml, old safari
+  -moz-opacity: @o;       // mozilla, netscape
+  opacity: @o;           // fx, safari, opera
+}
+
+
+// ========== background ==========
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
+
+.background-cover( @src ) when ( @legacy-support = no ){
+  background: url(@src) no-repeat center center fixed;
+  background-size: cover;
+}
+.background-cover( @src ) when ( @legacy-support = yes ){
+  background: url(@src) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.gradient( @angle: to top, @from, @to ) when ( @legacy-support = no ){
+  background: @to;
+  background-image: linear-gradient(@angle, @from, @to);
+}
+.gradient( @angle: top, @from, @to ) when ( @legacy-support = yes ){
+  background: @to;  
+//  background-image: -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-linear-gradient(@angle, @from, @to);
+  background-image: -moz-linear-gradient(@angle, @from, @to);
+  background-image: -ms-linear-gradient(@angle, @from, @to);
+  background-image: -o-linear-gradient(@angle, @from, @to);
+  background-image: linear-gradient(@angle, @from, @to);
+}
+// doc: https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient
+.radial-gradient(){
+//  background-image: -webkit-gradient(radial, left top, left bottom, from(@from), to(@to));
+  background-image: -webkit-radial-gradient(@angle, @from, @to);
+  background-image: -moz-radial-gradient(@angle, @from, @to);
+  background-image: -ms-radial-gradient(@angle, @from, @to);
+  background-image: -o-radial-gradient(@angle, @from, @to);
+  background-image: radial-gradient(@angle, @from, @to);
+}
+
+
+// ========== IMAGE PRELOAD ==========
+.preload-img( @src ){
+  background: url(@src) no-repeat;
+}
+
+// ========== box sizing ==========
+.box-sizing( @sizing: @box-sizing ){
+  -webkit-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+// ========== rounded corners ==========
+.rounded( @radius: @roundness ){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// ========== box shadow ==========
+.box-shadow( @args: @box-shadow ){
+  -webkit-box-shadow: @args;
+  -moz-box-shadow: @args;
+  box-shadow: @args;
+}
+.shadow-pool( @x: -1px, @y: -1px, @blur: 2px, @color: gray, @light: 50% ){
+  -webkit-box-shadow: @x @y @blur darken(@color, @light), inset @x @y @blur, lighten(@color, @light);
+  -moz-box-shadow: @x @y @blur darken(@color, 100% - @light), inset @x @y @blur, lighten(@color, 100% - @light);
+  box-shadow: @x @y @blur darken(@color, 100% - @light), inset @x @y @blur, lighten(@color, 100% - @light);
+}
+
+// ========== transform ==========
+
+.transform( ... ) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+
+.rotate( @deg:5deg ) {
+  .transform(rotate(@deg));
+}
+
+.scale( @ratio:1.5 ) {
+  .transform(scale(@ratio));
+}
+
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+
+// ========== transitions ==========
+.transition(@props: all, @duration:0.5s, @ease:linear) {
+  -webkit-transition: @props, @duration, @ease;
+  -moz-transition: @props, @duration, @ease;
+  -ms-transition: @props, @duration, @ease;
+  -o-transition: @props, @duration, @ease;
+  transition: @props, @duration, @ease;
+}
+.transition-duration(@duration: 0.5s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  transition-duration: @duration;
+}
+
+.glow( @duration:0.5s ){
+  .transition(all, @duration, ease-in-out)
+}
+
+//* =========================== TEXT =========================== */
+.text-wrap(){
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+}
+.word-wrap() when ( @legacy-support = yes ){
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.word-wrap(){
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.text-shadow( @color: @body-color ){
+  text-shadow: 0 0 1px darken(@color, 10%);
+}
+
+.user-select(@argument: none) {
+  -webkit-user-select: @argument;
+  -moz-user-select: @argument;
+  -ms-user-select: @argument;
+  user-select: @argument;
+}
+
+.condensed( @size: 1.2em/1.0em ){
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: 700;
+  font-size: @size;
+}
+
+
+.columns( @number: 3, @gap: 10px, @rule: none ){
+  text-align: justify;
+  -moz-column-count: @number;
+  -moz-column-gap: @gap;
+  -moz-column-rule: @rule;
+  -webkit-column-count: @number;
+  -webkit-column-gap: @gap;
+  -webkit-column-rule: @rule;
+  column-count: @number;
+  column-gap: @gap;
+  column-rule: @rule;
+}
+.image-replacement(){
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -1,0 +1,21 @@
+@import "../core/globalscope";
+
+.field{}
+.control{}
+
+.field-label{}
+.label-title{}
+
+.inline-form{}
+.stacked-form{}
+.aligned-form{}
+
+//* =========================== CHECKBOX =========================== */
+.checkbox{
+  > .input[type="checkbox"]{
+    ~ .checkimg{}
+    &:checked ~ .checkimg{}
+  }
+  > .label-title{}
+  > .checkimg{}
+}
