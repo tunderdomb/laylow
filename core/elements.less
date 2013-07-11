@@ -1,6 +1,19 @@
 @import "globalscope";
 // source of grouping: http://joshduck.com/periodic-table.html
 
+*{
+  .box-sizing();
+  font: inherit;
+}
+
+.selection() when ( @style-selection = yes ){
+  background-color: @bg-selection;
+  color: @clr-selection;
+}
+::-moz-selection{ .selection() }
+::-webkit-selection{ .selection() }
+::selection { .selection() }
+
 //* =========================== ROOT =========================== */
 
 html{}
@@ -15,6 +28,73 @@ link{}
 noscript{}
 style{}
 script{}
+
+//* =========================== DOCUMENT SECTIONS =========================== */
+
+body{
+  color: @clr-body;
+  background-color: @bg-body;
+  .disable-mobile-webkit-highlights();
+}
+
+// Contains elements grouped by theme, for example a chapter or tab box
+section{}
+
+// Navigation or introductory elements for the current section
+header{}
+// Contains a collection of links
+nav{}
+
+// Content related to surrounding elements that doesn't belong inline, such as a advertising or quotes
+aside{}
+
+// Section of the page content, such as a blog or forum post
+article{}
+// Contact information for the current article
+address{}
+
+// Footer of the current section
+footer{}
+
+// Collection of headings for the current section. The highest ranked heading represents the group in the document outline
+hgroup{}
+h1{}
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+
+//* =========================== GROUPING CONTENT =========================== */
+
+// Container with no semantic meaning
+div{}
+// Text that is preformatted in the HTML code
+pre{}
+// Line break
+br{}
+// Paragraph content
+p{}
+// Quote from another source
+blockquote{}
+// Thematic break within a paragraph
+hr{}
+// Ordered list
+ol{}
+// List of term-description pairs
+dl{}
+// Caption for a figure
+figcaption{}
+// Unordered list
+ul{}
+// Term which will be described
+dt{}
+// Contains elements related to single concept, such as an illustration or code example
+figure{}
+// List item
+li{}
+// Description for the preceding term
+dd{}
 
 //* =========================== EMBED =========================== */
 
@@ -39,6 +119,17 @@ video{}
 canvas{}
 img{}
 
+//* =========================== INTERACTIVE ELEMENTS =========================== */
+
+// Set of commands
+menu{}
+// Command the user can perform, such as publishing an article
+command{}
+// Caption of a details element
+summary{}
+// Contains additional information, such as the contents of an accordian view
+details{}
+
 //* =========================== TEXT LEVEL =========================== */
 
 // Container with no semantic meaning
@@ -47,10 +138,20 @@ span{}
 a{
   font: inherit;
   .force-pointer-on-clickables();
+  color: @clr-link;
   &:link {  }
-  &:visited {  }
-  &:hover {  }
-  &:active { }
+  &:visited {
+    color: @clr-link-visited;
+  }
+  &:hover {
+    color: @clr-link-hover;
+  }
+  &:active {
+    color: @clr-link-active;
+  }
+  &:focus {
+    color: @clr-link-focus;
+  }
   &[href^="http://"] {}
   &[href^="https://"] {}
   &[href^="ftp://"] {}
@@ -109,37 +210,6 @@ ruby{}
 bdo{}
 // Fragment of code
 code{}
-
-//* =========================== GROUPING CONTENT =========================== */
-
-// Container with no semantic meaning
-div{}
-// Text that is preformatted in the HTML code
-pre{}
-// Line break
-br{}
-// Paragraph content
-p{}
-// Quote from another source
-blockquote{}
-// Thematic break within a paragraph
-hr{}
-// Ordered list
-ol{}
-// List of term-description pairs
-dl{}
-// Caption for a figure
-figcaption{}
-// Unordered list
-ul{}
-// Term which will be described
-dt{}
-// Contains elements related to single concept, such as an illustration or code example
-figure{}
-// List item
-li{}
-// Description for the preceding term
-dd{}
 
 //* =========================== FORM =========================== */
 
@@ -264,40 +334,6 @@ input[type=file]{
 // Control for displaying progress of a task
 progress{}
 
-//* =========================== DOCUMENT SECTIONS =========================== */
-
-body{
-  .disable-mobile-webkit-highlights();
-}
-
-// Contains elements grouped by theme, for example a chapter or tab box
-section{}
-
-// Navigation or introductory elements for the current section
-header{}
-// Contains a collection of links
-nav{}
-
-// Content related to surrounding elements that doesn't belong inline, such as a advertising or quotes
-aside{}
-
-// Section of the page content, such as a blog or forum post
-article{}
-// Contact information for the current article
-address{}
-
-// Footer of the current section
-footer{}
-
-// Collection of headings for the current section. The highest ranked heading represents the group in the document outline
-hgroup{}
-h1{}
-h2{}
-h3{}
-h4{}
-h5{}
-h6{}
-
 
 //* =========================== TABULAR DATA =========================== */
 
@@ -311,14 +347,3 @@ th{}
 tbody{}
 thead{}
 tfoot{}
-
-//* =========================== INTERACTIVE ELEMENTS =========================== */
-
-// Set of commands
-menu{}
-// Command the user can perform, such as publishing an article
-command{}
-// Caption of a details element
-summary{}
-// Contains additional information, such as the contents of an accordian view
-details{}
