@@ -16,6 +16,7 @@
   user-select: none;
 }
 
+
 //* =========================== LAYOUT =========================== */
 .inline(){
   display: inline-block;
@@ -25,6 +26,47 @@
   display: inline-block;
   margin-right: -4px;
   text-align: @text-align;
+}
+// http://dev.w3.org/csswg/css-flexbox/#flex-grow
+.flex(  ){
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-flow( @flex-flow: row nowrap ){
+  -moz-flex-flow: @flex-flow;
+  -webkit-flex-flow: @flex-flow;
+  flex-flow: @flex-flow;
+}
+.flex-align-items( @align-items: stretch ){
+  -moz-align-items: @align-items;
+  -webkit-align-items: @align-items;
+  align-items: @align-items;
+}
+.flex-justify-content( @justify-content: flex-start ){
+  -moz-justify-content: @justify-content;
+  -webkit-justify-content: @justify-content;
+  justify-content: @justify-content;
+}
+.flex-align-content( @align-content: stretch ){
+  -moz-align-content: @align-content;
+  -webkit-align-content: @align-content;
+  align-content: @align-content;
+}
+.flex-item( @flex: initial ){
+  -moz-flex: @flex;
+  -webkit-flex: @flex;
+  flex: @flex;
+}
+.flex-item-order( @order: 0 ){
+  -moz-order: @order;
+  -webkit-order: @order;
+  order: @order;
+}
+.flex-item-align-self( @align-self: auto ){
+  -moz-align-self: @align-self;
+  -webkit-align-self: @align-self;
+  align-self: @align-self;
 }
 
 .min-height( @height ){
