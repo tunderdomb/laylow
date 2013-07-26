@@ -1,0 +1,41 @@
+//* =========================== GROUPING CONTENT =========================== */
+
+// Container with no semantic meaning
+div{}
+// Text that is preformatted in the HTML code
+pre{
+  white-space: pre-wrap; // normalize: Improve readability of pre-formatted text in all browsers.
+}
+// Line break
+br{}
+// Paragraph content
+p{
+  margin: 0 0 10px;
+}
+// Quote from another source
+blockquote{}
+// Thematic break within a paragraph
+hr{
+  // normalize: Address differences between Firefox and other browsers.
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+// Ordered list
+ol{}
+// List of term-description pairs
+dl{}
+// Caption for a figure
+figcaption{}
+// Unordered list
+ul{}
+// Term which will be described
+dt{}
+// Contains elements related to single concept, such as an illustration or code example
+figure{
+  margin: 0; // normalize: Address margin not present in IE 8/9 and Safari 5.
+}
+// List item
+li{}
+// Description for the preceding term
+dd{}

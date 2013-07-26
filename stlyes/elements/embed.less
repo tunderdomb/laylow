@@ -1,0 +1,44 @@
+//* =========================== EMBED =========================== */
+
+// Hyperlink area in an image map
+area{}
+// Image map for adding hyperlinks to parts of an image
+map{}
+// Nested browser frame
+iframe{}
+// Reference to non-HTML content
+embed{}
+// External resource such as an image, iframe or plugin
+object{}
+// Parameters for the parent object
+param{}
+// Alternative sources for parent video or audio elements
+source{}
+// Specifies external timing track for media elements
+track{}
+audio{
+  // normalize: Prevent modern browsers from displaying `audio` without controls.
+  // Remove excess height in iOS 5 devices.
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
+}
+
+video{}
+canvas{}
+
+// normalize: Correct `inline-block` display not defined in IE 8/9.
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+img{
+  border: 0; // normalize: Remove border when inside `a` element in IE 8/9.
+}
+
+svg:not(:root) {
+  overflow: hidden; // normalize: Correct overflow displayed oddly in IE 9.
+}

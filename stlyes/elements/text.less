@@ -1,0 +1,135 @@
+@import "../globalscope";
+
+//* =========================== TEXT LEVEL =========================== */
+
+// Container with no semantic meaning
+span{}
+// Hyperlink
+a{
+  font: inherit;
+  .force-pointer-on-clickables();
+  color: @clr-link;
+  h1 >&, h2 >&, h3 >&, h4 >&, h5 >&, h6 >& {
+    color: inherit;
+    text-decoration: inherit;
+    outline: none;
+  }
+  &:link {  }
+  &:visited {
+    color: @clr-link-visited;
+  }
+  &:hover {
+    outline: none; // Improve readability when focused and also mouse hovered in all browsers.
+    color: @clr-link-hover;
+  }
+  &:active {
+    outline: none; // Improve readability when focused and also mouse hovered in all browsers.
+    color: @clr-link-active;
+  }
+  &:focus {
+    //    outline: thin dotted;
+    outline: none;
+    color: @clr-brand-3;
+  }
+  &[href^="http://"] {}
+  &[href^="https://"] {}
+  &[href^="ftp://"] {}
+  &[href^="mailto:"] {}
+  &[href$=".pdf"] {}
+}
+// Annotation of preceding text
+rt{}
+// Term being defined by the parent section
+dfn{
+  font-style: italic; // normalize: Address styling not present in Safari 5 and Chrome.
+}
+// Text that should be emphasised
+em{}
+// Text in a alternate voice or mood, such as a technical term
+i{}
+// An aside, such as fine print
+small{
+  font-size: 80%; // normalize: Address inconsistent and variable font size in all browsers.
+}
+// Text that has been inserted during document editing
+ins{}
+// Text that is outdated or no longer accurate
+s{}
+// Contains semantically meaningless markup for browsers that don't understand ruby annotations
+rp{}
+// Abbreviation or acronym
+abbr{}
+
+abbr[title] {
+  border-bottom: 1px dotted; // normalize Address styling not present in IE 8/9, Safari 5, and Chrome.
+}
+// Time defined in a machine readable format
+time{}
+// Stylistically separated text of equal importance, such as a product name
+b{}
+// Text that is important
+strong{}
+
+// normalize: Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+b,
+strong {
+  font-weight: bold;
+}
+
+// Text that has been removed during document editing
+del{}
+
+// Example input (usually keyboard) for a program
+kbd{}
+// Subscript text
+samp{}
+// Fragment of code
+code{}
+
+// normalize: Correct font family set oddly in Safari 5 and Chrome.
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+// Quoted text
+q{
+  quotes: "\201C" "\201D" "\2018" "\2019"; // normalize: Set consistent quote types.
+}
+// Mathematical or programming variable.
+var{}
+// Text highlighted for referencing elsewhere
+sup{
+  top: -0.5em;
+}
+// Superscript text
+sub{
+  bottom: -0.25em;
+}
+// normalize: Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+// Text highlighted for referencing elsewhere
+mark{
+  // normalize: Address styling not present in IE 8/9.
+  background: #ff0;
+  color: #000;
+}
+// Text that is separated from directional formatting of its surroundings
+bdi{}
+// Opportunity for a line break
+wbr{}
+// Title of a referenced piece of work
+cite{}
+// Contains text with annotations, such as pronounciation hints. Commonly used in East Asian text
+ruby{}
+// Defines directional formatting for content
+bdo{}

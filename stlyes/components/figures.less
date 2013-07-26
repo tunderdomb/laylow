@@ -1,4 +1,25 @@
-@import "../core/globalscope";
+@import "../globalscope";
+
+.frame, .wide-frame, .tall-frame{
+  overflow: hidden;
+}
+.frame{
+  > img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.wide-frame{
+  > img{
+    max-width: 100%;
+  }
+}
+.tall-frame{
+  > img{
+    max-height: 100%;
+  }
+}
+
 .media-boxes() when (@legacy-support) {
   .media-box-left {
     > .media{

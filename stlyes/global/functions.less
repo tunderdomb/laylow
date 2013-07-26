@@ -173,6 +173,47 @@
   border-radius: @radius;
 }
 
+.create-rounded-group( @selector, @roundness ){
+  .@{selector}{
+    &:first-child{
+      .rounded(@roundness @roundness 0 0)
+    }
+    &:last-child{
+      .rounded(0 0 @roundness @roundness)
+    }
+  }
+}
+.create-rounded-group( type, @selector, @roundness ){
+  .@{selector}{
+    &:first-of-type{
+      .rounded(@roundness @roundness 0 0)
+    }
+    &:last-of-type{
+      .rounded(0 0 @roundness @roundness)
+    }
+  }
+}
+.create-rounded-group( type, @wrapper, @selector, @roundness ){
+  .@{wrapper}{
+    &:first-of-type .@{selector}{
+      .rounded(@roundness @roundness 0 0)
+    }
+    &:last-of-type .@{selector}{
+      .rounded(0 0 @roundness @roundness)
+    }
+  }
+}
+.create-rounded-group( @wrapper, @selector, @roundness ){
+  .@{wrapper}{
+    &:first-child > .@{selector}{
+      .rounded(@roundness @roundness 0 0)
+    }
+    &:last-child > .@{selector}{
+      .rounded(0 0 @roundness @roundness)
+    }
+  }
+}
+
 // ========== box shadow ==========
 .box-shadow( @args: 0 0 5px black ){
   -webkit-box-shadow: @args;

@@ -1,0 +1,39 @@
+@import "../globalscope";
+
+*{
+  position: relative;
+  .box-sizing();
+}
+
+.selection() when ( @style-selection = yes ){
+  background-color: @bg-selection;
+  color: @clr-selection;
+}
+::-moz-selection{ .selection() }
+::-webkit-selection{ .selection() }
+::selection { .selection() }
+
+// normalize: Address styling not present in IE 8/9.
+[hidden] {
+  display: none;
+}
+
+//* =========================== ROOT =========================== */
+
+html{
+  font-family: sans-serif; // normalize: Set default font family to sans-serif.
+  //normalize: Prevent iOS text size adjust after orientation change, without disabling user zoom.*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+//* =========================== META =========================== */
+
+head{}
+title{}
+meta{}
+base{}
+link{}
+noscript{}
+style{}
+script{}

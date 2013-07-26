@@ -1,0 +1,58 @@
+@import "../globalscope";
+
+//* =========================== DOCUMENT SECTIONS =========================== */
+
+body{
+  color: @clr-body;
+  background-color: @bg-body;
+  margin: 0;
+  .disable-mobile-webkit-highlights();
+}
+
+// Contains elements grouped by theme, for example a chapter or tab box
+section{}
+
+// Navigation or introductory elements for the current section
+header{}
+// Contains a collection of links
+nav{}
+
+// Content related to surrounding elements that doesn't belong inline, such as a advertising or quotes
+aside{}
+
+// Section of the page content, such as a blog or forum post
+article{}
+// Contact information for the current article
+address{}
+
+// Footer of the current section
+footer{}
+
+// Collection of headings for the current section. The highest ranked heading represents the group in the document outline
+hgroup{}
+h1{
+  // normalize: Address variable `h1` font-size and margin within `section` and `article`contexts in Firefox 4+, Safari 5, and Chrome.
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+
+// normalize: Correct `block` display not defined in IE 8/9.
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}

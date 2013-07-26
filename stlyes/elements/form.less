@@ -1,0 +1,206 @@
+@import "../globalscope";
+
+//* =========================== FORM =========================== */
+
+// Form
+form{}
+
+// Set of form controls grouped by theme
+fieldset{
+  // normalize: Define consistent border, margin, and padding.
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+// Define a name for a fieldset
+legend{
+  border: 0; // normalize: Correct `color` not being inherited in IE 8/9.
+  padding: 0; // normalize: Remove padding so people aren't caught out if they zero out fieldsets.
+}
+
+// Control for selecting from multiple options
+select{
+  text-transform: none; // normalize: Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. Correct `select` style inheritance in Firefox 4+ and Opera.
+
+  font-family: inherit; // normalize: Correct font family not being inherited in all browsers.
+  font-size: 100%; // normalize: Correct font size not being inherited in all browsers.
+  margin: 0; // normalize: Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+
+  .force-pointer-on-clickables();
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+// Group of option
+optgroup{}
+// Single option within a select control
+option{}
+
+// Define sets of options
+datalist{}
+
+// Caption for a form control
+label{
+  .force-pointer-on-clickables();
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// Generic form input
+input{
+  line-height: normal; // normalize: Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+
+  font-family: inherit; // normalize: Correct font family not being inherited in all browsers.
+  font-size: 100%; // normalize: Correct font size not being inherited in all browsers.
+  margin: 0; // normalize: Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+
+// text inputs
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea{
+  .force-pointer-on-fields();
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// normalize: Remove inner padding and search cancel button in Safari 5 and Chrome on OS X.
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+// normalize: Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+// remove MS password field reveal
+::-ms-reveal {
+  display: none;
+}
+
+
+// Multiline free-form text input
+textarea{
+  overflow: auto; // normalize: Remove default vertical scrollbar in IE 8/9.
+  vertical-align: top; // normalize: Improve readability and alignment in all browsers.
+
+  font-family: inherit; // normalize: Correct font family not being inherited in all browsers.
+  font-size: 100%; // normalize: Correct font size not being inherited in all browsers.
+  margin: 0; // normalize: Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// Contains the results of a calculation
+output{}
+// Generates private-public key pairs
+keygen{}
+
+// ========== CLICKABLES ==========
+
+// A button
+button{
+  line-height: normal; // normalize: Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+  text-transform: none; // normalize: Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. Correct `select` style inheritance in Firefox 4+ and Opera.
+
+  font-family: inherit; // normalize: Correct font family not being inherited in all browsers.
+  font-size: 100%; // normalize: Correct font size not being inherited in all browsers.
+  margin: 0; // normalize: Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// clickables
+button,
+input[type="button"],
+html input[type="button"],
+input[type="submit"],
+input[type="reset"]{
+  -webkit-appearance: button; // normalize: Correct inability to style clickable `input` types in iOS.
+  .force-pointer-on-clickables();
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// normalize: Remove inner padding and border in Firefox 4+.
+::-moz-focus-inner,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+// normalize: Re-set default cursor for disabled elements.
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+// other inputs
+input[type="color"]{}
+input[type="range"]{}
+input[type="image"]{
+  .force-pointer-on-clickables()
+}
+
+// radio
+input[type="radio"]{
+  .force-pointer-on-clickables();
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// checkbox
+input[type="checkbox"]{
+  .force-pointer-on-clickables();
+  &:hover{}
+  &:focus{}
+  &:active{}
+}
+
+// normalize
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; // Address box sizing set to `content-box` in IE 8/9.
+  padding: 0; // Remove excess padding in IE 8/9.
+}
+
+// file
+input[type="file"]{}
+
+
+// Control for entering a numeric value in a known range
+meter{}
+
+
+// Control for displaying progress of a task
+progress{
+  cursor: default;
+}
