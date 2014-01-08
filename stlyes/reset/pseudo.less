@@ -1,6 +1,9 @@
-@import "cope";
 // source: http://tjvantoll.com/2013/04/15/list-of-pseudo-elements-to-style-form-controls/
 
+// selections
+::-moz-selection{  }
+::-webkit-selection{}
+::selection { }
 
 //* =========================== FORMS =========================== */
 
@@ -28,10 +31,10 @@
 // ========== number ==========
 ::-webkit-textfield-decoration-container { }
 ::-webkit-inner-spin-button {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 ::-webkit-outer-spin-button {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 // ========== password ==========
@@ -65,22 +68,22 @@
 // ========== search ==========
 // Remove the rounded corners
 input[type=search] {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 // Hide the cancel button
 ::-webkit-search-cancel-button {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 // Hide the magnifying glass
 ::-webkit-search-results-button {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 // ========== clear control ==========
 ::-ms-clear {
-  //  display: none;
+    display: none;
 }
 
 // ========== button ==========
@@ -100,7 +103,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 // ========== meter ==========
 meter {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 ::-webkit-meter-bar {}
 ::-webkit-meter-optimum-value {}
@@ -109,7 +112,7 @@ meter {
 
 // ========== progress ==========
 progress {
-  //  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 ::-webkit-progress-inner-element {}
 ::-webkit-progress-bar {}
@@ -122,7 +125,7 @@ progress {
 
 // ========== textarea ==========
 ::-webkit-resizer {
-  //  display: none;
+    display: none;
 }
 
 // ========== validation ==========
