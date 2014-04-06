@@ -1,0 +1,212 @@
+// positions
+.absolute{
+  position: absolute;
+}
+
+// displays
+.inline{
+  display: inline-block;
+}
+.block{
+  display: block;
+}
+.table{
+  display: table;
+  width: 100%;
+}
+.cell{
+  display: table-cell;
+}
+
+// aligns
+.middle{
+  vertical-align: middle;
+}
+.top{
+  vertical-align: top;
+}
+.bottom{
+  vertical-align: bottom;
+}
+.left{
+  text-align: left;
+}
+.right{
+  text-align: right;
+}
+.center{
+  text-align: center;
+}
+
+// combos
+// inline blocks
+.middle-line{
+  &:extend(.middle)
+  &:extend(.inline)
+}
+.top-line{
+  &:extend(.top)
+  &:extend(.inline)
+}
+.left-line{
+  &:extend(.left)
+  &:extend(.inline)
+}
+.right-line{
+  &:extend(.right)
+  &:extend(.inline)
+}
+.center-line{
+  &:extend(.center)
+  &:extend(.inline)
+}
+// cells
+.middle-cell{
+  &:extend(.middle)
+  &:extend(.cell)
+}
+.top-cell{
+  &:extend(.top)
+  &:extend(.cell)
+}
+.left-cell{
+  &:extend(.left)
+  &:extend(.cell)
+}
+.right-cell{
+  &:extend(.right)
+  &:extend(.cell)
+}
+.center-cell{
+  &:extend(.center)
+  &:extend(.cell)
+}
+
+// widths
+.one-wide{
+  width: 10%;
+}
+.two-wide{
+  width: 20%;
+}
+.three-wide{
+  width: 30%;
+}
+.four-wide{
+  width: 40%;
+}
+.half-wide{
+  width: 50%;
+}
+.six-wide{
+  width: 60%;
+}
+.seven-wide{
+  width: 70%;
+}
+.eight-wide{
+  width: 80%;
+}
+.nine-wide{
+  width: 90%;
+}
+.third-wide{
+  width: (100% / 3);
+}
+.two-third-wide{
+  width: (100% / 3 * 2);
+}
+.quarter-wide{
+  width: 25%;
+}
+.three-quarter-wide{
+  width: 75%;
+}
+.wide{
+  width: 100%;
+}
+
+// heights
+.one-tall{
+  height: 10%;
+}
+.two-tall{
+  height: 20%;
+}
+.three-tall{
+  height: 30%;
+}
+.four-tall{
+  height: 40%;
+}
+.half-tall{
+  height: 50%;
+}
+.six-tall{
+  height: 60%;
+}
+.seven-tall{
+  height: 70%;
+}
+.eight-tall{
+  height: 80%;
+}
+.nine-tall{
+  height: 90%;
+}
+.third-tall{
+  height: (100% / 3);
+}
+.two-third-tall{
+  height: (100% / 3 * 2);
+}
+.quarter-tall{
+  height: 25%;
+}
+.three-quarter-tall{
+  height: 75%;
+}
+.tall{
+  height: 100%;
+}
+
+// padding
+.pad-one{
+  padding-left: 10%;
+}
+.pad-two-wide{
+  padding-left: 20%;
+}
+.pad-three-wide{
+  padding-left: 30%;
+}
+.pad-four-wide{
+  padding-left: 40%;
+}
+pad-.half-wide{
+  padding-left: 50%;
+}
+.pad-six-wide{
+  padding-left: 60%;
+}
+.pad-seven-wide{
+  padding-left: 70%;
+}
+.pad-eight-wide{
+  padding-left: 80%;
+}
+.pad-nine-wide{
+  padding-left: 90%;
+}
+.pad-third-wide{
+  padding-left: (100% / 3);
+}
+.pad-two-third-wide{
+  padding-left: (100% / 3 * 2);
+}
+.pad-quarter-wide{
+  padding-left: 25%;
+}
+.pad-three-quarter-wide{
+  padding-left: 75%;
+}
