@@ -1,0 +1,23 @@
+{
+  "name": "laylow",
+  "version": "0.10.0",
+  "homepage": "https://github.com/tunderdomb/laylow",
+  "authors": [
+    "tunderdomb <tunderdomb@gmail.com>"
+  ],
+  "description": "Style bud",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "less"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
